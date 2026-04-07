@@ -1,7 +1,12 @@
 <?php
 $uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-if (preg_match('/\.(css|js|png|jpg|jpeg|gif|webp|ico|svg|woff|woff2|ttf)$/', $uri)) {
+// Strip /demo prefix if running locally in subdirectory
+$uri = preg_replace('#^/demo#', '', $uri);
+if ($uri === '') $uri = '/';
+
+// Serve static files directly
+if (preg_match('/\.(css|js|png|jpg|jpeg|gif|webp|ico|svg|woff|woff2|ttf|map)$/', $uri)) {
     return false;
 }
 

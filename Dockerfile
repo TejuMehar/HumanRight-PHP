@@ -24,8 +24,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy composer files first for better caching
-COPY composer.json ./
+
+# Copy composer files first
+COPY composer.json composer.lock ./
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader --no-scripts
@@ -33,14 +34,17 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts
 # Copy rest of project files
 COPY . .
 
-# Apache virtual host config
+# Apache virtual host config with AllowOverride All
 RUN echo '<VirtualHost *:80>\n\
     DocumentRoot /var/www/html\n\
     <Directory /var/www/html>\n\
+        Options -Indexes +FollowSymLinks\n\
         AllowOverride All\n\
         Require all granted\n\
-        Options -Indexes\n\
+        DirectoryIndex index.php\n\
     </Directory>\n\
+    # Route all requests through router.php\n\
+    FallbackResource /router.php\n\
     ErrorLog ${APACHE_LOG_DIR}/error.log\n\
     CustomLog ${APACHE_LOG_DIR}/access.log combined\n\
 </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
