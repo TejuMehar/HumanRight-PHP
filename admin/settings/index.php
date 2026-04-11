@@ -70,7 +70,7 @@ include __DIR__ . '/../partials/header.php';
     </h2>
     <form method="POST" class="space-y-4">
       <input type="hidden" name="action" value="site">
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label class="text-sm font-medium text-gray-700">Site Name</label>
           <input type="text" name="site_name" value="<?= sanitize($settings['site_name'] ?? SITE_NAME) ?>"
@@ -87,7 +87,7 @@ include __DIR__ . '/../partials/header.php';
         <textarea name="site_description" rows="2"
           class="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm resize-none"><?= sanitize($settings['site_description'] ?? '') ?></textarea>
       </div>
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <?php foreach (['facebook' => 'Facebook URL', 'twitter' => 'Twitter URL', 'instagram' => 'Instagram URL'] as $key => $label): ?>
         <div>
           <label class="text-sm font-medium text-gray-700"><?= $label ?></label>

@@ -41,14 +41,14 @@ include __DIR__ . '/partials/header.php';
 ?>
 
 <!-- Stat Cards -->
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
   <?php foreach ([
     ['fa-users',     'Total Users',    $totalUsers,     'bg-blue-500',   SITE_URL.'/admin/users/'],
     ['fa-newspaper', 'Total Blogs',    $totalBlogs,     'bg-green-500',  SITE_URL.'/admin/blogs/'],
     ['fa-comments',  'Total Comments', $totalComments,  'bg-yellow-500', SITE_URL.'/admin/comments/'],
     ['fa-envelope',  'Messages',       $totalMessages,  'bg-purple-500', SITE_URL.'/admin/messages/'],
   ] as [$icon, $label, $count, $color, $link]): ?>
-  <a href="<?= $link ?>" class="bg-white rounded-2xl shadow p-6 flex items-center gap-4 hover:shadow-md transition">
+  <a href="<?= $link ?>" class="bg-white rounded-2xl shadow p-4 sm:p-6 flex items-center gap-3 sm:gap-4 hover:shadow-md transition">
     <div class="<?= $color ?> text-white w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
       <i class="fa-solid <?= $icon ?>"></i>
     </div>
@@ -61,7 +61,7 @@ include __DIR__ . '/partials/header.php';
 </div>
 
 <!-- Secondary Stats -->
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
   <?php foreach ([
     ['Published Blogs',   $publishedBlogs,  'text-green-600',  'bg-green-50'],
     ['Draft Blogs',       $draftBlogs,      'text-gray-500',   'bg-gray-50'],
@@ -90,7 +90,7 @@ include __DIR__ . '/partials/header.php';
 <?php endif; ?>
 
 <!-- Charts -->
-<div class="grid lg:grid-cols-2 gap-6 mb-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
   <div class="bg-white rounded-2xl shadow p-6">
     <h2 class="font-bold text-gray-700 mb-4">Blogs Published (Last 7 Days)</h2>
     <canvas id="blogChart" height="120"></canvas>
@@ -102,7 +102,7 @@ include __DIR__ . '/partials/header.php';
 </div>
 
 <!-- Blog Status Donut + Recent Activity -->
-<div class="grid lg:grid-cols-3 gap-6 mb-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
   <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center">
     <h2 class="font-bold text-gray-700 mb-4 self-start">Blog Status</h2>
     <canvas id="donutChart" height="180"></canvas>
@@ -134,7 +134,7 @@ include __DIR__ . '/partials/header.php';
 </div>
 
 <!-- Recent Blogs & Users -->
-<div class="grid lg:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
   <div class="bg-white rounded-2xl shadow p-6">
     <div class="flex items-center justify-between mb-4">
       <h2 class="font-bold text-gray-700">Recent Blogs</h2>

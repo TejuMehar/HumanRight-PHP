@@ -120,7 +120,7 @@ include __DIR__ . '/partials/header.php';
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label class="text-sm font-medium text-gray-700">Username <span class="text-red-500">*</span></label>
           <input type="text" name="username" value="<?= sanitize($admin['username']) ?>" required
