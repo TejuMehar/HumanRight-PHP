@@ -1,89 +1,70 @@
 <?php
 require_once __DIR__ . '/includes/init.php';
-$pageTitle = 'About — ' . SITE_NAME;
+$pageTitle = 'About Us — ' . SITE_NAME;
 include __DIR__ . '/includes/header.php';
 ?>
 
-<!-- Hero -->
-<section class="relative bg-ink text-white py-28 px-5 sm:px-8 overflow-hidden">
-  <div class="absolute inset-0">
-    <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1600&q=80&auto=format&fit=crop"
-      alt="Advocacy" class="w-full h-full object-cover opacity-20">
-    <div class="absolute inset-0 bg-gradient-to-r from-ink/95 to-ink/60"></div>
-  </div>
-  <div class="relative max-w-4xl mx-auto text-center">
-    <span class="inline-flex items-center gap-2 bg-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-      <i class="fa-solid fa-circle-dot text-[8px]"></i> Who We Are
-    </span>
-    <h1 class="font-serif text-5xl md:text-6xl leading-tight mb-6">
-      A Movement Built on<br><span class="text-primary italic">Principle & Purpose</span>
+<!-- PAGE HEADER -->
+<section class="bg-navy text-white py-16 px-5 sm:px-8">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-3">About Us</p>
+    <h1 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight mb-4">
+      We started with one case.<br>We never stopped.
     </h1>
-    <p class="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto">
-      We are researchers, advocates, and community builders united by a single conviction: that justice is possible, and that it requires all of us.
+    <p class="text-white/60 text-base leading-relaxed max-w-2xl">
+      Founded in 2009 by a small group of lawyers and community organisers, we've grown into a team of 80+ staff and volunteers working across four continents.
     </p>
   </div>
 </section>
 
 
-<!-- Mission & Vision -->
-<section class="py-24 px-5 sm:px-8 bg-white">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-    <div class="sr-l space-y-6">
-      <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
-        <i class="fa-solid fa-circle-dot text-[8px]"></i> Our Mission
-      </span>
-      <h2 class="font-serif text-4xl text-ink leading-tight">
-        Centering the voices of those most impacted by injustice.
+<!-- OUR STORY -->
+<section class="py-16 sm:py-20 px-5 sm:px-8 bg-white">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <div class="sr-l">
+      <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-4">Our Story</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink leading-tight mb-5">
+        Built from the ground up, not the top down.
       </h2>
-      <p class="text-gray-500 leading-relaxed">
-        We are a global platform dedicated to protecting human rights, advancing social justice, and building equitable systems. Our work spans research, policy advocacy, community engagement, and international partnerships.
-      </p>
-      <p class="text-gray-500 leading-relaxed">
-        We believe that lasting change comes from the ground up — from communities who understand their own needs and have the power to shape their own futures.
-      </p>
+      <div class="space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed">
+        <p>We didn't start with a strategy document or a five-year plan. We started because a community in rural Kenya was being evicted from land their families had farmed for generations, and no one was helping them fight back.</p>
+        <p>That case took three years. We lost twice before we won. But we won — and the community kept their land. That experience shaped everything about how we work: slow, careful, community-led, and in it for the long haul.</p>
+        <p>Today we work on gender justice, civic freedoms, economic rights, and refugee protection. The issues are different. The approach is the same.</p>
+      </div>
     </div>
     <div class="sr-r space-y-4">
-      <div class="bg-mist rounded-2xl border border-gray-100 p-8">
-        <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-          <i class="fa-solid fa-eye text-primary"></i>
-        </div>
-        <h3 class="font-serif text-2xl text-ink mb-3">Our Vision</h3>
-        <p class="text-gray-500 leading-relaxed">A world where every person — regardless of gender, race, nationality, or economic status — lives with full dignity, freedom, and access to justice.</p>
+      <div class="bg-slate border border-gray-200 rounded-lg p-6">
+        <h3 class="font-serif text-xl font-semibold text-ink mb-2">What we're working toward</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">A world where no one needs an organisation like ours — because rights are protected, institutions are accountable, and communities have the power to defend themselves.</p>
       </div>
-      <div class="bg-blush rounded-2xl border border-accent/10 p-8">
-        <div class="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
-          <i class="fa-solid fa-compass text-accent"></i>
-        </div>
-        <h3 class="font-serif text-2xl text-ink mb-3">Our Approach</h3>
-        <p class="text-gray-500 leading-relaxed">Community-led. Evidence-based. Intersectional. We don't impose solutions — we co-create them with the people and communities we serve.</p>
+      <div class="bg-slate border border-gray-200 rounded-lg p-6">
+        <h3 class="font-serif text-xl font-semibold text-ink mb-2">How we actually work</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">We don't fly in, run a workshop, and leave. We hire locally, build relationships over years, and measure success by what communities can do without us — not by how many reports we publish.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- Core Values -->
-<section class="py-24 px-5 sm:px-8 bg-mist">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16 sr">
-      <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
-        <i class="fa-solid fa-circle-dot text-[8px]"></i> What Guides Us
-      </span>
-      <h2 class="font-serif text-4xl md:text-5xl text-ink">Core Values</h2>
+<!-- VALUES -->
+<section class="py-16 sm:py-20 px-5 sm:px-8 bg-slate border-y border-gray-200">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-10 sr">
+      <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-3">How We Work</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink leading-tight">
+        A few things we actually believe in.
+      </h2>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
       <?php foreach ([
-        ['fa-scale-balanced','#2D3A8C','bg-primary/10',  'Equity',         'We go beyond equality — addressing root causes and structural barriers to ensure everyone has what they need to thrive.'],
-        ['fa-people-group',  '#C0392B','bg-accent/10', 'Inclusion',      'Every voice matters. We actively centre those most marginalised in our work, governance, and partnerships.'],
-        ['fa-eye',           '#2D3A8C','bg-primary/10',  'Transparency',   'We hold ourselves accountable to the communities we serve through open reporting and ethical practice.'],
-        ['fa-shield-halved', '#C0392B','bg-accent/10', 'Accountability', 'We take responsibility for our actions and their impact — and we demand the same from institutions of power.'],
-      ] as $i=>[$icon,$color,$bg,$title,$desc]): ?>
-      <div class="bg-white rounded-2xl border border-gray-100 p-7 lift sr" style="transition-delay:<?= $i*80 ?>ms">
-        <div class="w-11 h-11 rounded-xl <?= $bg ?> flex items-center justify-center mb-5">
-          <i class="fa-solid <?= $icon ?> text-base" style="color:<?= $color ?>"></i>
-        </div>
-        <h3 class="font-serif text-xl text-ink mb-3"><?= $title ?></h3>
-        <p class="text-gray-500 text-sm leading-relaxed"><?= $desc ?></p>
+        ['Equity over equality',         'Treating everyone the same ignores the fact that some people start from a much harder place. We try to address that gap, not paper over it.'],
+        ['Nothing about us without us',  'Every programme we run is designed with the people it\'s meant to serve. If they\'re not in the room, we\'re not in the room.'],
+        ['Radical transparency',         'We publish our financials, our failures, and our methodology. If we can\'t explain what we\'re doing and why, we probably shouldn\'t be doing it.'],
+        ['Accountability goes both ways', 'We hold governments accountable. We also hold ourselves accountable — to our funders, our partners, and most importantly, the communities we serve.'],
+      ] as $i=>[$title,$desc]): ?>
+      <div class="bg-white border border-gray-200 rounded-lg p-6 sr" style="transition-delay:<?= $i*70 ?>ms">
+        <h3 class="font-serif text-lg font-semibold text-ink mb-2"><?= $title ?></h3>
+        <p class="text-gray-600 text-sm leading-relaxed"><?= $desc ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -91,27 +72,27 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 
-<!-- Experience -->
-<section class="py-24 px-5 sm:px-8 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16 sr">
-      <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
-        <i class="fa-solid fa-circle-dot text-[8px]"></i> Global Leadership
-      </span>
-      <h2 class="font-serif text-4xl md:text-5xl text-ink">Experience & Reach</h2>
+<!-- TRACK RECORD -->
+<section class="py-16 sm:py-20 px-5 sm:px-8 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-10 sr">
+      <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-3">Track Record</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink leading-tight">
+        Some of what we've actually done.
+      </h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <?php foreach ([
-        ['fa-globe',     'International Policy',  'Engaged with UN bodies, regional human rights commissions, and multilateral development institutions to shape global policy frameworks.'],
-        ['fa-users',     'Community Programs',    'Designed and led over 200 community-based programs across Africa, Asia, and Latin America, reaching 50,000+ individuals.'],
-        ['fa-book-open', 'Research & Publishing', 'Produced peer-reviewed research, policy briefs, and advocacy reports that have influenced legislation in 15+ countries.'],
-      ] as $i=>[$icon,$title,$desc]): ?>
-      <div class="border border-gray-100 rounded-2xl p-8 lift sr" style="transition-delay:<?= $i*100 ?>ms">
-        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-          <i class="fa-solid <?= $icon ?> text-primary text-lg"></i>
-        </div>
-        <h3 class="font-serif text-xl text-ink mb-3"><?= $title ?></h3>
-        <p class="text-gray-500 text-sm leading-relaxed"><?= $desc ?></p>
+        ['Legal Victories',
+         'Won landmark cases on land rights in Kenya, Uganda, and Colombia. Secured asylum for over 1,200 individuals facing persecution. Challenged unlawful detention practices in three countries.'],
+        ['Community Programmes',
+         'Trained 4,000+ community paralegals across Sub-Saharan Africa and South Asia. Ran 200+ legal aid clinics in underserved areas. Supported 150 grassroots organisations to register and operate legally.'],
+        ['Policy Change',
+         'Contributed to legislative reforms in 12 countries. Submitted evidence to UN treaty bodies 30+ times. Co-authored reports cited in parliamentary debates and court judgments.'],
+      ] as $i=>[$title,$desc]): ?>
+      <div class="border border-gray-200 rounded-lg p-6 sr" style="transition-delay:<?= $i*80 ?>ms">
+        <h3 class="font-serif text-xl font-semibold text-ink mb-3"><?= $title ?></h3>
+        <p class="text-gray-600 text-sm leading-relaxed"><?= $desc ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -119,28 +100,29 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 
-<!-- Philosophy — dark -->
-<section class="py-24 px-5 sm:px-8 bg-ink text-white relative overflow-hidden">
-  <div class="absolute top-0 right-0 w-80 h-80 bg-primary/8 rounded-full blur-[100px] pointer-events-none"></div>
-  <div class="relative max-w-5xl mx-auto text-center sr">
-    <span class="inline-flex items-center gap-2 bg-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-      <i class="fa-solid fa-circle-dot text-[8px]"></i> Our Philosophy
-    </span>
-    <h2 class="font-serif text-4xl md:text-5xl mb-7 leading-tight">
-      Development must be led by<br><span class="text-primary">the communities it serves.</span>
-    </h2>
-    <p class="text-white/55 text-lg leading-relaxed max-w-3xl mx-auto mb-14">
-      We reject top-down models of development. True progress happens when power is redistributed, when local knowledge is valued, and when communities are architects of change.
-    </p>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left">
+<!-- PHILOSOPHY -->
+<section class="py-16 sm:py-20 px-5 sm:px-8 bg-navy text-white">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start sr">
+    <div>
+      <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-4">Our Approach</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold leading-tight mb-5">
+        We don't believe in saviour organisations.
+      </h2>
+      <p class="text-white/60 leading-relaxed text-sm mb-4">
+        The most effective human rights work happens when communities lead it. Our job is to provide resources, expertise, and solidarity — not to take over.
+      </p>
+      <p class="text-white/60 leading-relaxed text-sm">
+        That means sometimes stepping back. It means funding local organisations instead of expanding our own. It means celebrating when a community no longer needs us.
+      </p>
+    </div>
+    <div class="space-y-3">
       <?php foreach ([
-        ['fa-seedling',         'Community-Led',  'Solutions designed with and by the people most affected.'],
-        ['fa-magnifying-glass', 'Evidence-Based', 'Grounded in rigorous research and lived experience.'],
-        ['fa-link',             'Intersectional', 'Recognising that injustice is layered and interconnected.'],
-      ] as [$icon,$title,$desc]): ?>
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
-        <i class="fa-solid <?= $icon ?> text-primary text-xl mb-4 block"></i>
-        <h4 class="font-serif text-lg mb-2"><?= $title ?></h4>
+        ['Local leadership first',   'Every programme is led by people from the community it serves. We provide support, not direction.'],
+        ['Evidence, not assumptions','We research before we act. We document what works and what doesn\'t — and we publish both.'],
+        ['Long-term commitment',     'We don\'t do short-term projects. If we can\'t commit to at least three years, we don\'t start.'],
+      ] as [$title,$desc]): ?>
+      <div class="border border-white/15 rounded-lg p-5">
+        <h4 class="font-semibold text-white text-sm mb-1"><?= $title ?></h4>
         <p class="text-white/50 text-sm leading-relaxed"><?= $desc ?></p>
       </div>
       <?php endforeach; ?>
@@ -150,13 +132,12 @@ include __DIR__ . '/includes/header.php';
 
 
 <!-- CTA -->
-<section class="py-20 px-5 sm:px-8 bg-white">
-  <div class="max-w-3xl mx-auto text-center sr">
-    <h2 class="font-serif text-4xl text-ink mb-5">Ready to collaborate?</h2>
-    <p class="text-gray-500 mb-8">Whether you're a researcher, activist, funder, or community leader — there's a place for you in this movement.</p>
-    <a href="<?= SITE_URL ?>/contact"
-      class="inline-flex items-center gap-2 bg-primary text-white font-semibold px-9 py-4 rounded-full hover:bg-primary/85 transition-colors text-sm shadow-lg shadow-primary/20">
-      Get In Touch <i class="fa-solid fa-arrow-right text-xs"></i>
+<section class="py-14 px-5 sm:px-8 bg-white border-t border-gray-200">
+  <div class="max-w-2xl mx-auto text-center sr">
+    <h2 class="font-serif text-3xl font-semibold text-ink mb-3">Want to work with us?</h2>
+    <p class="text-gray-500 text-sm mb-6">We're always looking for partners, researchers, funders, and volunteers who share our values. Drop us a message — we read everything.</p>
+    <a href="<?= SITE_URL ?>/contact" class="inline-flex items-center gap-2 bg-navy text-white font-semibold px-7 py-3 rounded hover:bg-blue transition-colors text-sm">
+      Get in Touch <i class="fa-solid fa-arrow-right text-xs"></i>
     </a>
   </div>
 </section>
