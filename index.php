@@ -25,7 +25,7 @@ include __DIR__ . '/includes/header.php';
 
         <h1 class="font-serif text-ink leading-[1.04] text-[2.2rem] sm:text-[2.9rem] lg:text-[3.5rem] xl:text-[4rem]">
           Turning Rights Into<br>
-          <span class="text-primary italic">Real-World Protection</span><br>
+          <span class="text-primary">Real-World Protection</span><br>
           for Every Community.
         </h1>
 
@@ -62,7 +62,7 @@ include __DIR__ . '/includes/header.php';
             <div class="rounded-[1.35rem] overflow-hidden aspect-[4/3] mb-4 border border-gray-100">
               <img
                 src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=1300&q=80&auto=format&fit=crop"
-                alt="Human rights advocates marching together"
+                alt="Human rights advocates marching for justice"
                 class="w-full h-full object-cover object-center"
                 loading="eager">
             </div>
@@ -111,30 +111,37 @@ include __DIR__ . '/includes/header.php';
 <section class="py-24 px-5 sm:px-8 bg-white">
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-    <!-- Left: image collage -->
+    <!-- Left: image composition -->
     <div class="relative sr-l">
-      <div class="grid grid-cols-2 gap-3">
-        <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
-          <img src="https://images.unsplash.com/photo-1591189863430-ab87e120f312?w=600&q=80&auto=format&fit=crop"
+      <div class="absolute -top-8 -left-8 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-10 right-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative grid grid-cols-1 sm:grid-cols-6 gap-3 sm:gap-4">
+        <div class="sm:col-span-4 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(15,23,42,.14)] aspect-[4/5] sm:aspect-[4/4.7] border border-white/70">
+          <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=900&q=80&auto=format&fit=crop"
             alt="Human rights march" class="w-full h-full object-cover">
         </div>
-        <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3] mt-8">
-          <img src="https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=600&q=80&auto=format&fit=crop"
-            alt="Women empowerment" class="w-full h-full object-cover">
-        </div>
-        <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
-          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80&auto=format&fit=crop"
-            alt="Community solidarity" class="w-full h-full object-cover">
-        </div>
-        <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3] -mt-8">
-          <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=600&q=80&auto=format&fit=crop"
-            alt="Advocacy and justice" class="w-full h-full object-cover">
+
+        <div class="sm:col-span-2 grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-4">
+          <div class="rounded-2xl overflow-hidden shadow-lg aspect-[4/4.2] sm:aspect-[4/4.8] border border-white/70">
+            <img src="https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=700&q=80&auto=format&fit=crop"
+              alt="Human rights advocacy gathering" class="w-full h-full object-cover">
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-lg aspect-[4/4.2] sm:aspect-[4/4.8] border border-white/70">
+            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=700&q=80&auto=format&fit=crop"
+              alt="Community solidarity for human rights" class="w-full h-full object-cover">
+          </div>
         </div>
       </div>
-      <!-- Overlay badge -->
-      <div class="absolute -bottom-4 -right-4 bg-ink text-white rounded-2xl px-5 py-4 shadow-xl">
-        <p class="font-serif text-3xl font-semibold text-primary">15+</p>
-        <p class="text-white/60 text-xs mt-0.5">Years of Impact</p>
+
+      <div class="absolute -bottom-5 left-4 sm:left-6 bg-white border border-gray-100 rounded-2xl px-4 sm:px-5 py-3 shadow-xl">
+        <p class="font-serif text-2xl sm:text-3xl font-semibold text-primary leading-none">15+</p>
+        <p class="text-gray-500 text-[11px] uppercase tracking-[0.14em] mt-1">Years of Impact</p>
+      </div>
+
+      <div class="absolute top-4 right-3 sm:right-4 bg-ink text-white rounded-xl px-3.5 py-2.5 shadow-xl hidden sm:block">
+        <p class="text-[10px] uppercase tracking-[0.14em] text-white/60">Field Reach</p>
+        <p class="font-semibold text-sm mt-0.5">40+ Countries</p>
       </div>
     </div>
 
@@ -181,31 +188,49 @@ include __DIR__ . '/includes/header.php';
 ══════════════════════════════════════════ -->
 <section class="py-24 px-5 sm:px-8 bg-mist">
   <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16 sr">
+    <div class="text-center max-w-3xl mx-auto mb-12 sr">
       <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
         <i class="fa-solid fa-circle-dot text-[8px]"></i> What We Do
       </span>
       <h2 class="font-serif text-4xl md:text-5xl text-ink">Our Focus Areas</h2>
+      <p class="text-gray-500 text-sm sm:text-base mt-4">We use evidence, advocacy, and community partnership to protect rights and drive systemic change.</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <?php foreach ([
-        ['fa-venus',        '#2D3A8C','bg-primary/10',   'Gender Justice',              'Advancing feminist leadership, ending gender-based violence, and ensuring women\'s full participation in public life.'],
-        ['fa-landmark',     '#C0392B','bg-accent/10',  'Governance & Accountability', 'Strengthening democratic institutions, fighting corruption, and ensuring transparent, inclusive governance.'],
-        ['fa-coins',        '#2D3A8C','bg-primary/10',   'Economic Justice',            'Challenging extractive systems, advocating for fair wages, land rights, and equitable resource distribution.'],
-        ['fa-globe-africa', '#C0392B','bg-accent/10',  'Decolonial Development',      'Centering Global South voices, dismantling colonial frameworks, and redefining what development truly means.'],
-      ] as $i=>[$icon,$color,$bg,$title,$desc]): ?>
-      <div class="group bg-white rounded-2xl p-7 lift sr border border-gray-100 cursor-default" style="transition-delay:<?= $i*80 ?>ms">
-        <div class="w-12 h-12 rounded-xl <?= $bg ?> flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-          <i class="fa-solid <?= $icon ?> text-lg" style="color:<?= $color ?>"></i>
-        </div>
-        <h3 class="font-serif text-xl text-ink mb-3"><?= $title ?></h3>
-        <p class="text-gray-500 text-sm leading-relaxed"><?= $desc ?></p>
-        <div class="mt-5 flex items-center gap-1.5 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity" style="color:<?= $color ?>">
-          Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i>
+    <div class="bg-white border border-gray-100 rounded-3xl p-5 sm:p-7 lg:p-8 shadow-[0_20px_60px_rgba(13,27,42,.08)] sr">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
+        <?php foreach ([
+          ['01','fa-venus',        '#2D3A8C','bg-primary/10', 'Gender Justice',              'Ending gender-based violence and advancing women\'s leadership.', SITE_URL.'/blog?search=gender'],
+          ['02','fa-landmark',     '#C0392B','bg-accent/10',  'Governance & Accountability', 'Strengthening democratic institutions and transparent governance.', SITE_URL.'/blog?search=governance'],
+          ['03','fa-coins',        '#2D3A8C','bg-primary/10', 'Economic Justice',            'Advocating for fair wages, land rights, and resource equity.', SITE_URL.'/blog?search=economic%20justice'],
+          ['04','fa-globe-africa', '#C0392B','bg-accent/10',  'Decolonial Development',      'Centering Global South leadership in development priorities.', SITE_URL.'/blog?search=decolonial'],
+        ] as $i=>[$num,$icon,$color,$bg,$title,$desc,$url]): ?>
+        <article class="group rounded-2xl border border-gray-100 bg-mist/55 p-5 hover:bg-white hover:shadow-lg transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-semibold tracking-[0.14em] text-gray-400"><?= $num ?></span>
+            <div class="w-10 h-10 rounded-xl <?= $bg ?> flex items-center justify-center group-hover:scale-105 transition-transform">
+              <i class="fa-solid <?= $icon ?> text-sm" style="color:<?= $color ?>"></i>
+            </div>
+          </div>
+          <h3 class="font-serif text-[1.35rem] text-ink leading-snug mb-2"><?= $title ?></h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4"><?= $desc ?></p>
+          <a href="<?= $url ?>" class="inline-flex items-center gap-1.5 text-xs font-semibold" style="color:<?= $color ?>">
+            Explore work <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </article>
+        <?php endforeach; ?>
+      </div>
+
+      <div class="mt-6 sm:mt-8 pt-5 border-t border-gray-100 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+        <p class="text-gray-500 text-sm">Want the full methodology behind these pillars?</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="<?= SITE_URL ?>/about" class="inline-flex items-center justify-center gap-2 bg-ink text-white font-semibold px-6 py-3 rounded-full hover:bg-primary transition-colors text-sm">
+            Our Approach <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <a href="<?= SITE_URL ?>/blog" class="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 text-ink font-semibold px-6 py-3 rounded-full hover:border-ink transition-colors text-sm">
+            Read Insights
+          </a>
         </div>
       </div>
-      <?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -318,8 +343,8 @@ include __DIR__ . '/includes/header.php';
 <section class="relative py-28 px-5 sm:px-8 overflow-hidden">
   <!-- Background image -->
   <div class="absolute inset-0">
-    <img src="https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?w=1800&q=80&auto=format&fit=crop"
-      alt="Justice background" class="w-full h-full object-cover object-center">
+    <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1800&q=80&auto=format&fit=crop"
+      alt="Human rights demonstration background" class="w-full h-full object-cover object-center">
     <!-- Dark overlay so text is readable -->
     <div class="absolute inset-0 bg-ink/75"></div>
     <!-- Subtle vignette -->
