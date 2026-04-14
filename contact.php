@@ -30,7 +30,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- PAGE HEADER -->
-<section class="bg-navy text-white py-14 px-5 sm:px-8">
+<section class="bg-navy text-white py-14 px-5 sm:px-8 reveal">
   <div class="max-w-6xl mx-auto">
     <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-3">Contact</p>
     <h1 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight mb-3">
@@ -43,7 +43,7 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 <!-- WHAT PEOPLE CONTACT US ABOUT -->
-<div class="bg-white border-b border-gray-200 py-5 px-5 sm:px-8">
+<div class="bg-white border-b border-gray-200 py-5 px-5 sm:px-8 reveal">
   <div class="max-w-6xl mx-auto flex flex-wrap items-center gap-2">
     <span class="text-xs font-semibold text-gray-400 mr-1">People contact us about:</span>
     <?php foreach (['Legal aid requests','Research partnerships','Funding & grants','Volunteering','Media enquiries','Speaking invitations','General questions'] as $type): ?>
@@ -53,7 +53,7 @@ include __DIR__ . '/includes/header.php';
 </div>
 
 <!-- CONTACT CONTENT -->
-<section class="py-16 sm:py-20 px-5 sm:px-8 bg-white">
+<section class="py-16 sm:py-20 px-5 sm:px-8 bg-white reveal">
   <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
 
     <!-- Info -->

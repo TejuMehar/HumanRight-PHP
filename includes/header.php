@@ -34,30 +34,63 @@
   }
 </script>
 <style>
+  :root {
+    --ease-out-soft: cubic-bezier(.22, 1, .36, 1);
+    --ease-out-snappy: cubic-bezier(.16, 1, .3, 1);
+  }
   *, body { font-family: 'Inter', system-ui, sans-serif; }
-  html { scroll-behavior: smooth; }
-  body { color: #1f2937; background: #ffffff; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { overflow-x: hidden; }
+  body {
+    color: #1f2937;
+    background:
+      radial-gradient(circle at right top, rgba(37, 99, 235, .06), transparent 24%),
+      radial-gradient(circle at left bottom, rgba(30, 58, 95, .06), transparent 20%),
+      #ffffff;
+  }
   h1, h2, h3, h4, .font-serif { font-family: 'Lora', Georgia, serif; }
   ::selection { background: #DBEAFE; color: #1E3A5F; }
 
+  .page-shell {
+    animation: pageFadeIn .65s var(--ease-out-soft) both;
+  }
+
   /* Scroll reveal */
-  .sr  { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .sr  { opacity:0; transform:translateY(24px); transition:opacity .7s var(--ease-out-soft), transform .7s var(--ease-out-soft); }
   .sr.on  { opacity:1; transform:none; }
-  .sr-l { opacity:0; transform:translateX(-24px); transition:opacity .6s ease, transform .6s ease; }
+  .sr-l { opacity:0; transform:translateX(-24px); transition:opacity .7s var(--ease-out-soft), transform .7s var(--ease-out-soft); }
   .sr-l.on { opacity:1; transform:none; }
-  .sr-r { opacity:0; transform:translateX(24px); transition:opacity .6s ease, transform .6s ease; }
+  .sr-r { opacity:0; transform:translateX(24px); transition:opacity .7s var(--ease-out-soft), transform .7s var(--ease-out-soft); }
   .sr-r.on { opacity:1; transform:none; }
+  .reveal { opacity:0; transform:translateY(28px) scale(.985); transition:opacity .75s var(--ease-out-soft), transform .75s var(--ease-out-soft); }
+  .reveal.on { opacity:1; transform:none; }
 
   /* Navbar */
-  #nav { transition: box-shadow .2s ease, background .2s ease; }
+  #nav { transition: box-shadow .25s ease, background .25s ease, border-color .25s ease; }
   #nav.scrolled { box-shadow: 0 1px 12px rgba(0,0,0,.08); background: rgba(255,255,255,.98) !important; }
+
+  /* Mobile nav animation */
+  #mobileMenu {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: max-height .35s var(--ease-out-snappy), opacity .25s ease, transform .25s ease;
+  }
+  #mobileMenu.open {
+    max-height: 28rem;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
 
   /* Reading bar */
   #rbar { position:fixed; top:0; left:0; height:3px; background:#2563EB; width:0; z-index:9999; transition:width .08s linear; }
 
   /* Card hover */
-  .card-hover { transition: box-shadow .2s ease, transform .2s ease; }
-  .card-hover:hover { box-shadow: 0 8px 30px rgba(0,0,0,.1); transform: translateY(-2px); }
+  .card-hover { transition: box-shadow .28s ease, transform .28s var(--ease-out-snappy), border-color .25s ease; }
+  .card-hover:hover { box-shadow: 0 16px 36px rgba(15,23,42,.12); transform: translateY(-4px); border-color: #D1D5DB; }
 
   /* Shared auth/forms UI */
   .surface-card {
@@ -121,8 +154,36 @@
   .prose-body strong { color:#111827; font-weight:600; }
   .prose-body img { border-radius:8px; margin:1.5rem 0; width:100%; }
 
+  @keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+
   /* Marquee */
   @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  @media (max-width: 640px) {
+    .prose-body { font-size: 1rem; line-height: 1.78; }
+    .prose-body h2 { font-size: 1.35rem; }
+    .prose-body h3 { font-size: 1.12rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .page-shell,
+    .sr,
+    .sr-l,
+    .sr-r,
+    .reveal,
+    .card-hover,
+    #mobileMenu {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+      max-height: none !important;
+    }
+  }
 </style>
 </head>
 <body class="bg-white text-gray-800 flex flex-col min-h-screen antialiased">
@@ -141,15 +202,15 @@ $navItems = [
 $isActive = fn($patterns) => in_array($currentPath, $patterns) || array_filter($patterns, fn($p) => $p !== '/' && str_starts_with($currentPath, $p));
 ?>
 <nav id="nav" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-4">
 
     <!-- Logo -->
-    <a href="<?= SITE_URL ?>/" class="flex items-center gap-3 flex-shrink-0">
+    <a href="<?= SITE_URL ?>/" class="flex items-center gap-2.5 flex-shrink-0 min-w-0">
       <div class="w-8 h-8 bg-navy rounded flex items-center justify-center flex-shrink-0">
         <i class="fa-solid fa-scale-balanced text-white text-xs"></i>
       </div>
-      <div>
-        <span class="font-serif font-semibold text-navy text-[0.95rem] leading-none block"><?= SITE_NAME ?></span>
+      <div class="min-w-0">
+        <span class="font-serif font-semibold text-navy text-[0.9rem] sm:text-[0.95rem] leading-none block truncate"><?= SITE_NAME ?></span>
         <span class="text-[9px] text-gray-400 tracking-widest uppercase leading-none block mt-0.5">Est. 2009</span>
       </div>
     </a>
@@ -192,7 +253,7 @@ $isActive = fn($patterns) => in_array($currentPath, $patterns) || array_filter($
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobileMenu" class="hidden md:hidden border-t border-gray-100 bg-white px-5 py-4">
+  <div id="mobileMenu" class="md:hidden border-t border-gray-100 bg-white px-5 py-4" aria-hidden="true">
     <?php foreach ($navItems as [$label, $url, $patterns]): ?>
       <?php $active = $isActive($patterns); ?>
       <a href="<?= $url ?>" class="flex items-center justify-between py-3 text-sm font-medium border-b border-gray-50 <?= $active ? 'text-blue' : 'text-gray-700 hover:text-ink' ?>">
@@ -212,15 +273,44 @@ $isActive = fn($patterns) => in_array($currentPath, $patterns) || array_filter($
 </nav>
 
 <div class="h-16"></div>
-<main class="flex-1">
+<main class="flex-1 page-shell">
 
 <script>
-  document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('hidden'));
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMobileMenu = () => {
+    mobileMenu?.classList.remove('open');
+    mobileMenu?.setAttribute('aria-hidden', 'true');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+  };
+
+  menuBtn?.setAttribute('aria-expanded', 'false');
+  menuBtn?.setAttribute('aria-controls', 'mobileMenu');
+
+  menuBtn?.addEventListener('click', () => {
+    if (!mobileMenu) return;
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMobileMenu));
+  window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
+
   window.addEventListener('scroll', () => {
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
     const b = document.getElementById('rbar');
     if (b) { const d = document.documentElement; b.style.width = (d.scrollTop / (d.scrollHeight - d.clientHeight) * 100) + '%'; }
   });
-  const sro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }), { threshold: 0.08 });
-  document.addEventListener('DOMContentLoaded', () => document.querySelectorAll('.sr,.sr-l,.sr-r').forEach(el => sro.observe(el)));
+  const sro = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('on');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.sr,.sr-l,.sr-r,.reveal').forEach((el) => sro.observe(el));
+  });
 </script>

@@ -22,7 +22,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- PAGE HEADER -->
-<section class="bg-navy text-white py-14 px-5 sm:px-8">
+<section class="bg-navy text-white py-14 px-5 sm:px-8 reveal">
   <div class="max-w-6xl mx-auto">
     <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-3">Research & Insights</p>
     <h1 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight">
@@ -32,13 +32,13 @@ include __DIR__ . '/includes/header.php';
 </section>
 
 <!-- FILTER BAR -->
-<div class="bg-white border-b border-gray-200 sticky top-16 z-30">
+<div class="bg-white border-b border-gray-200 sticky top-16 z-30 reveal">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-3">
     <form method="GET" class="flex flex-wrap items-center gap-2">
       <div class="relative">
         <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
         <input type="text" name="search" value="<?= $search ?>" placeholder="Search articles..."
-          class="pl-8 pr-4 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue/20 focus:border-blue w-48 sm:w-56">
+          class="pl-8 pr-4 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue/20 focus:border-blue w-[11rem] sm:w-56">
       </div>
       <div class="flex flex-wrap gap-1.5">
         <a href="<?= SITE_URL ?>/blog" class="px-3 py-1.5 rounded text-xs font-semibold transition <?= !$category ? 'bg-navy text-white' : 'bg-slate text-gray-600 hover:bg-gray-200 border border-gray-200' ?>">All</a>
@@ -91,7 +91,7 @@ include __DIR__ . '/includes/header.php';
           <a href="<?= SITE_URL ?>/single-blog?slug=<?= sanitize($featured['slug']) ?>"><?= sanitize($featured['title']) ?></a>
         </h2>
         <p class="text-gray-600 leading-relaxed text-sm mb-5"><?= sanitize(substr($featured['excerpt'] ?? '', 0, 200)) ?>...</p>
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <span class="text-gray-400 text-sm"><?= date('F d, Y', $featured['created_at']->toDateTime()->getTimestamp()) ?></span>
           <a href="<?= SITE_URL ?>/single-blog?slug=<?= sanitize($featured['slug']) ?>"
             class="bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded hover:bg-blue transition-colors">
@@ -104,7 +104,7 @@ include __DIR__ . '/includes/header.php';
 
     <!-- GRID -->
     <?php if (!empty($blogs)): ?>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
       <?php foreach ($blogs as $i=>$blog): ?>
       <article class="group flex flex-col border border-gray-200 rounded-lg overflow-hidden card-hover sr" style="transition-delay:<?= ($i%3)*60 ?>ms">
         <a href="<?= SITE_URL ?>/single-blog?slug=<?= sanitize($blog['slug']) ?>"
@@ -140,7 +140,7 @@ include __DIR__ . '/includes/header.php';
 
     <!-- PAGINATION -->
     <?php if ($pages > 1): ?>
-    <div class="flex justify-center items-center gap-2 mt-12">
+    <div class="flex flex-wrap justify-center items-center gap-2 mt-12">
       <?php if ($page > 1): ?>
         <a href="?page=<?= $page-1 ?>&search=<?= urlencode($search) ?>&category=<?= urlencode($category) ?>"
           class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-600 hover:border-navy hover:text-navy transition">← Prev</a>
