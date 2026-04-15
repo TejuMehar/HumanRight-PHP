@@ -36,7 +36,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- ARTICLE HEADER -->
-<div class="bg-slate border-b border-gray-200">
+<div class="bg-slate border-b border-gray-200 reveal">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10">
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-xs text-gray-400 mb-6">
@@ -72,7 +72,7 @@ include __DIR__ . '/includes/header.php';
 
 <!-- FEATURED IMAGE -->
 <?php if (!empty($blog['image'])): ?>
-<div class="max-w-6xl mx-auto px-5 sm:px-8 py-8">
+<div class="max-w-6xl mx-auto px-5 sm:px-8 py-8 reveal">
   <img src="<?= SITE_URL ?>/assets/images/<?= sanitize($blog['image']) ?>"
     class="w-full rounded-lg object-cover max-h-[480px] border border-gray-200"
     alt="<?= sanitize($blog['title']) ?>">
@@ -81,7 +81,7 @@ include __DIR__ . '/includes/header.php';
 
 <!-- BODY + SIDEBAR -->
 <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8">
-  <div class="grid grid-cols-1 lg:grid-cols-[1fr_240px] gap-12 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_240px] gap-10 lg:gap-12 items-start">
 
     <!-- Article body -->
     <div>
@@ -160,7 +160,7 @@ include __DIR__ . '/includes/header.php';
 
 <!-- RELATED -->
 <?php if (!empty($related)): ?>
-<section class="bg-slate border-t border-gray-200 py-14 px-5 sm:px-8">
+<section class="bg-slate border-t border-gray-200 py-14 px-5 sm:px-8 reveal">
   <div class="max-w-6xl mx-auto">
     <h2 class="font-serif text-2xl font-semibold text-ink mb-8">Related Articles</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -193,7 +193,7 @@ include __DIR__ . '/includes/header.php';
 
 
 <!-- COMMENTS -->
-<section class="py-14 px-5 sm:px-8 bg-white border-t border-gray-200">
+<section class="py-14 px-5 sm:px-8 bg-white border-t border-gray-200 reveal">
   <div class="max-w-3xl mx-auto">
     <h2 class="font-serif text-2xl font-semibold text-ink mb-8">
       Comments <span class="text-gray-400 font-sans font-normal text-base">(<?= count($comments) ?>)</span>

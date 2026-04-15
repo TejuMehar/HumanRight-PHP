@@ -5,7 +5,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- PAGE HEADER -->
-<section class="bg-navy text-white py-16 px-5 sm:px-8">
+<section class="bg-navy text-white py-16 px-5 sm:px-8 reveal">
   <div class="max-w-6xl mx-auto">
     <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-3">About Us</p>
     <h1 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight mb-4">
@@ -47,7 +47,7 @@ include __DIR__ . '/includes/header.php';
 
 
 <!-- VALUES -->
-<section class="py-16 sm:py-20 px-5 sm:px-8 bg-slate border-y border-gray-200">
+<section class="py-16 sm:py-20 px-5 sm:px-8 bg-slate border-y border-gray-200 reveal">
   <div class="max-w-6xl mx-auto">
     <div class="mb-10 sr">
       <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-3">How We Work</p>
@@ -73,7 +73,7 @@ include __DIR__ . '/includes/header.php';
 
 
 <!-- TRACK RECORD -->
-<section class="py-16 sm:py-20 px-5 sm:px-8 bg-white">
+<section class="py-16 sm:py-20 px-5 sm:px-8 bg-white reveal">
   <div class="max-w-6xl mx-auto">
     <div class="mb-10 sr">
       <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-3">Track Record</p>
@@ -101,7 +101,7 @@ include __DIR__ . '/includes/header.php';
 
 
 <!-- PHILOSOPHY -->
-<section class="py-16 sm:py-20 px-5 sm:px-8 bg-navy text-white">
+<section class="py-16 sm:py-20 px-5 sm:px-8 bg-navy text-white reveal">
   <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start sr">
     <div>
       <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-4">Our Approach</p>

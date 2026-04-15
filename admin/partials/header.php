@@ -23,6 +23,9 @@
   }
 </script>
 <style>
+  :root {
+    --admin-ease-soft: cubic-bezier(.22, 1, .36, 1);
+  }
   :root { color-scheme: light; }
   *, body { font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; }
   h1,h2,h3,h4,.font-serif { font-family: 'Source Serif 4', Georgia, serif; }
@@ -32,7 +35,7 @@
       radial-gradient(circle at top right, rgba(209, 73, 91, .05), transparent 20%),
       linear-gradient(180deg, #f4f7fd 0%, #eef3fb 100%);
   }
-  #sidebar { transition: transform 0.25s ease, box-shadow .25s ease; }
+  #sidebar { transition: transform 0.3s var(--admin-ease-soft), box-shadow .3s ease; }
   @media (max-width: 1023px) {
     #sidebar { transform: translateX(-100%); }
     #sidebar.open { transform: translateX(0); }
@@ -49,6 +52,7 @@
     backdrop-filter: blur(16px);
     border: 1px solid rgba(148, 163, 184, .16);
     box-shadow: 0 16px 44px rgba(13, 27, 42, .08);
+    animation: adminRise .55s var(--admin-ease-soft) both;
   }
   .admin-navlink { position: relative; overflow: hidden; }
   .admin-navlink::before {
@@ -60,6 +64,41 @@
     transition: opacity .2s ease;
   }
   .admin-navlink:hover::before { opacity: 1; }
+
+  .admin-main > * {
+    animation: adminRise .6s var(--admin-ease-soft) both;
+  }
+
+  @keyframes adminRise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .admin-surface {
+      margin: .5rem;
+      border-radius: 1rem;
+      padding-top: .7rem;
+      padding-bottom: .7rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .admin-surface,
+    .admin-main > *,
+    #sidebar,
+    .admin-navlink::before {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+  }
 </style>
 </head>
 <body class="admin-panel min-h-screen text-gray-800">
@@ -218,7 +257,7 @@
   </div>
 </header>
 
-<main class="flex-1 p-4 sm:p-6 lg:p-8">
+<main class="admin-main flex-1 p-4 sm:p-6 lg:p-8">
 
 <script>
   function openSidebar() {

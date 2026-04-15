@@ -11,7 +11,7 @@ include __DIR__ . '/includes/header.php';
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
       <!-- Left -->
-      <div class="space-y-6">
+      <div class="space-y-6 sr-l">
         <p class="text-blue text-sm font-semibold tracking-wide uppercase">Working in 40+ countries since 2009</p>
 
         <h1 class="font-serif text-ink text-4xl sm:text-5xl leading-tight font-semibold">
@@ -58,7 +58,7 @@ include __DIR__ . '/includes/header.php';
 
 
 <!-- MARQUEE -->
-<div class="bg-navy text-white py-2.5 overflow-hidden border-b border-navy">
+<div class="bg-navy text-white py-2.5 overflow-hidden border-b border-navy reveal">
   <div class="flex gap-10 whitespace-nowrap" style="animation:marquee 30s linear infinite">
     <?php foreach (array_fill(0,4,['Gender Justice','·','Civic Freedoms','·','Economic Rights','·','Refugee Rights','·','Land Rights','·','Free Press','·']) as $set): foreach($set as $item): ?>
     <span class="text-[11px] font-semibold tracking-widest uppercase text-white/70"><?= $item ?></span>
@@ -132,7 +132,7 @@ include __DIR__ . '/includes/header.php';
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sr">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <?php foreach ([
         ['Gender Justice',
          'One in three women globally experiences violence. We work with survivors, train local advocates, and push for legal reform — from domestic violence laws to equal inheritance rights.',
@@ -146,8 +146,8 @@ include __DIR__ . '/includes/header.php';
         ['Refugee & Displacement Rights',
          'Over 100 million people are forcibly displaced. We provide legal aid at borders, challenge unlawful deportations, and advocate for durable solutions — not just temporary camps.',
          SITE_URL.'/blog?category=Refugee+Rights'],
-      ] as [$title,$desc,$url]): ?>
-      <div class="bg-white border border-gray-200 rounded-lg p-6 card-hover">
+      ] as $i => [$title,$desc,$url]): ?>
+      <div class="bg-white border border-gray-200 rounded-lg p-6 card-hover sr" style="transition-delay:<?= $i*80 ?>ms">
         <h3 class="font-serif text-xl font-semibold text-ink mb-2"><?= $title ?></h3>
         <p class="text-gray-600 text-sm leading-relaxed mb-4"><?= $desc ?></p>
         <a href="<?= $url ?>" class="text-blue text-sm font-semibold hover:underline inline-flex items-center gap-1">
@@ -182,8 +182,8 @@ include __DIR__ . '/includes/header.php';
         ['40+',  'Countries',            'fa-globe'],
         ['200+', 'Programs & cases',     'fa-folder-open'],
         ['50K+', 'People supported',     'fa-people-group'],
-      ] as [$n,$l,$icon]): ?>
-      <div class="border border-white/15 rounded-lg p-6">
+      ] as $i => [$n,$l,$icon]): ?>
+      <div class="border border-white/15 rounded-lg p-6 card-hover" style="transition-delay:<?= $i*70 ?>ms">
         <i class="fa-solid <?= $icon ?> text-white/40 text-lg mb-3 block"></i>
         <p class="font-serif text-3xl font-semibold text-white"><?= $n ?></p>
         <p class="text-white/50 text-sm mt-1"><?= $l ?></p>
@@ -198,7 +198,7 @@ include __DIR__ . '/includes/header.php';
 <?php if ($blogs): ?>
 <section class="py-16 sm:py-20 px-5 sm:px-8 bg-white">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-end justify-between mb-10 sr">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sr gap-3">
       <div>
         <p class="text-blue text-sm font-semibold tracking-wide uppercase mb-2">From Our Team</p>
         <h2 class="font-serif text-3xl sm:text-4xl text-ink font-semibold">Latest Research & Field Reports</h2>
