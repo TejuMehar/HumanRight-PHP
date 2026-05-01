@@ -35,6 +35,6 @@ echo   Press Ctrl+C to stop the server
 echo ============================================
 echo.
 
-C:\xampp\php\php.exe -S localhost:8080 -t C:\xampp\htdocs\demo C:\xampp\htdocs\demo\router.php
+C:\xampp\php\php.exe -S localhost:8080 -t C:\Projects\Temp\HumanRight-PHP C:\Projects\Temp\HumanRight-PHP\router.php
 
 pause
