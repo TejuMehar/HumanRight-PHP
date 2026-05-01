@@ -35,22 +35,10 @@ include __DIR__ . '/includes/header.php';
       </div>
 
       <!-- Right: image -->
-      <div class="sr-r">
-        <div class="rounded-lg overflow-hidden aspect-[4/3] border border-gray-200 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=1200&q=80&auto=format&fit=crop"
-            alt="Activists marching for human rights"
-            class="w-full h-full object-cover" loading="eager">
-        </div>
-        <div class="grid grid-cols-2 gap-3 mt-3">
-          <div class="bg-white border border-gray-200 rounded p-3">
-            <p class="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Current Focus</p>
-            <p class="text-sm font-semibold text-ink">Civic Space & Freedoms</p>
-          </div>
-          <div class="bg-white border border-gray-200 rounded p-3">
-            <p class="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Active Region</p>
-            <p class="text-sm font-semibold text-ink">Sub-Saharan Africa</p>
-          </div>
-        </div>
+      <div class="sr-r flex justify-center">
+        <img src="<?= SITE_URL ?>/assets/images/profileimg1.png"
+          alt="Profile"
+          class="w-full max-w-md object-contain" loading="eager">
       </div>
     </div>
   </div>
