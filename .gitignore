@@ -3,5 +3,4 @@ vendor/
 .env
 seed.php
 test_img.jpg
-assets/images/*
 !assets/images/.gitkeep
